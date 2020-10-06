@@ -14,25 +14,35 @@ const routes = [
     path: "/vacuum",
     name: "Vacuum",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Vacuum.vue")
+      import(/* webpackChunkName: "Vacuum" */ "../views/Vacuum.vue")
   },
   {
     path: "/dosators",
     name: "Dosators",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Dosators.vue")
+      import(/* webpackChunkName: "Dosators" */ "../views/Dosators.vue")
   },
   {
     path: "/refund",
     name: "Refund",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Refund.vue")
+      import(/* webpackChunkName: "Refund" */ "../views/Refund.vue")
   },
   {
     path: "/payment",
     name: "Payment",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Payment.vue")
+      import(/* webpackChunkName: "Payment" */ "../views/Payment.vue")
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () =>
+      import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue")
+  },
+  {
+    path: "*",
+    redirect: "/404"
   }
 ];
 

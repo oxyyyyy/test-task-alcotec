@@ -29,6 +29,10 @@ export default {
     StaticPageService.get(this.pageSlug)
       .then(response => {
         if (response.status === 200) {
+          if (!response.data.success) {
+            this.$router.push("/404");
+            return;
+          }
           this.html = response.data.content.ru;
           this.title = response.data.name.ru;
         } else {
