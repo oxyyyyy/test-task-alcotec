@@ -1,8 +1,8 @@
 <template>
-  <keep-alive>
-    <div class="vacuum">
-      <ProductsTable :products="products" /></div
-  ></keep-alive>
+  <div class="vacuum">
+    <ProductsTable :products="products" v-if="isLoadedProducts" />
+    <p v-else>Loading...</p>
+  </div>
 </template>
 
 <script>
@@ -17,7 +17,8 @@ export default {
   },
   data() {
     return {
-      products: []
+      products: [],
+      isLoadedProducts: false
     };
   },
   created() {
@@ -32,7 +33,8 @@ export default {
         .then(products => (this.products = products))
         .catch(error => {
           throw new Error(error);
-        });
+        })
+        .finally(() => (this.isLoadedProducts = true));
     }
   }
 };
