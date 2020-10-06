@@ -20,11 +20,11 @@ a {
 
 .page {
   padding-top: 15px;
-}
 
-.page__title {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  text-align: center;
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
