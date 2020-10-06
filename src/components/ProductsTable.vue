@@ -5,7 +5,14 @@
         <td>Изображение</td>
         <td>Наименование</td>
         <td>Наличие</td>
-        <td><button>Цена</button></td>
+        <td>
+          <button @click="toggleSortOrderOfProducts">
+            Цена
+            <span v-if="isActiveSorting">{{
+              $store.getters.productsSortOrderAsc ? "(asc)" : "(desc)"
+            }}</span>
+          </button>
+        </td>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +29,8 @@
 </template>
 
 <script>
+import { TOGGLE_SORT_ORDER_OF_PRODUCTS } from "@/store/types/mutations.type";
+
 export default {
   name: "ProductsTable",
   props: {
@@ -32,8 +41,15 @@ export default {
   },
   data() {
     return {
-      VUE_APP_BASE_URL: process.env.VUE_APP_BASE_URL
+      VUE_APP_BASE_URL: process.env.VUE_APP_BASE_URL,
+      isActiveSorting: false
     };
+  },
+  methods: {
+    toggleSortOrderOfProducts() {
+      this.isActiveSorting = true;
+      this.$store.commit(TOGGLE_SORT_ORDER_OF_PRODUCTS);
+    }
   }
 };
 </script>
