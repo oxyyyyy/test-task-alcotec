@@ -1,10 +1,12 @@
 <template>
-  <div class="refund"></div>
+  <Page pageSlug="purchase-returns" />
 </template>
 
 <script>
+import Page from "@/components/Page";
+
 export default {
   name: "Refund",
-  components: {}
+  components: { Page }
 };
 </script>

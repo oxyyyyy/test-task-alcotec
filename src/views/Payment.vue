@@ -1,10 +1,12 @@
 <template>
-  <div class="payment"></div>
+  <Page pageSlug="payment" />
 </template>
 
 <script>
+import Page from "@/components/Page";
+
 export default {
   name: "Payment",
-  components: {}
+  components: { Page }
 };
 </script>
