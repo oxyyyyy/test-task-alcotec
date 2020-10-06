@@ -11,7 +11,7 @@
     <tbody>
       <tr v-for="product in products" :key="product.id">
         <td>
-          <img :src="'https://dev.alcotec.com.ua' + product.img" alt="" />
+          <img :src="VUE_APP_BASE_URL + product.img" alt="" />
         </td>
         <td>{{ product.title }}</td>
         <td>{{ product.availability.ru }}</td>
@@ -29,6 +29,11 @@ export default {
       type: Array,
       required: true
     }
+  },
+  data() {
+    return {
+      VUE_APP_BASE_URL: process.env.VUE_APP_BASE_URL
+    };
   }
 };
 </script>
