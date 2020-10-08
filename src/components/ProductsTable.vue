@@ -9,7 +9,11 @@
           <button @click="toggleSortOrderOfProducts">
             Цена
             <span v-if="isActiveSorting">{{
-              $store.getters.productsSortOrderAsc ? "(asc)" : "(desc)"
+              $store.getters.productsSortOrderAsc === ""
+                ? ""
+                : $store.getters.productsSortOrderAsc
+                ? "(asc)"
+                : "(desc)"
             }}</span>
           </button>
         </td>

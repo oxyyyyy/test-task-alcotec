@@ -11,16 +11,10 @@ const routes = [
     component: Home
   },
   {
-    path: "/vacuum",
-    name: "Vacuum",
+    path: "/products/:product_category_id",
+    name: "Products",
     component: () =>
-      import(/* webpackChunkName: "Vacuum" */ "../views/Vacuum.vue")
-  },
-  {
-    path: "/dosators",
-    name: "Dosators",
-    component: () =>
-      import(/* webpackChunkName: "Dosators" */ "../views/Dosators.vue")
+      import(/* webpackChunkName: "Products" */ "../views/Products.vue")
   },
   {
     path: "/refund",
