@@ -1,5 +1,5 @@
 <template>
-  <div class="vacuum">
+  <div class="dosators">
     <ProductsTable :products="products" v-if="isLoadedProducts" />
     <p v-else>Loading...</p>
   </div>
@@ -11,7 +11,7 @@ import { FETCH_PRODUCTS } from "@/store/types/actions.type";
 import ProductsTable from "@/components/ProductsTable";
 
 export default {
-  name: "Vacuum",
+  name: "Products",
   components: {
     ProductsTable
   },
@@ -22,15 +22,23 @@ export default {
     };
   },
   created() {
-    if (!this.products.length) {
-      this.fetchProducts();
-    }
+    this.fetchProducts(this.$route.params.product_category_id);
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.fetchProducts(to.params.product_category_id);
+    next();
   },
   methods: {
-    fetchProducts() {
+    fetchProducts(productCategoryId) {
       this.$store
-        .dispatch(FETCH_PRODUCTS, "322")
-        .then(products => (this.products = products))
+        .dispatch(FETCH_PRODUCTS, productCategoryId)
+        .then(products => {
+          if (!products) {
+            this.$router.push("/404");
+            return;
+          }
+          this.products = products;
+        })
         .catch(error => {
           throw new Error(error);
         })

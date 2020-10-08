@@ -5,22 +5,22 @@
         <router-link to="/" class="nav__list-item-link">Главная</router-link>
       </li>
       <li class="nav__list-item">
-        <router-link to="/vacuum" class="nav__list-item-link"
+        <router-link to="/products/322" class="nav__list-item-link"
           >Вакууматоры</router-link
         >
       </li>
       <li class="nav__list-item">
-        <router-link to="/dosators" class="nav__list-item-link"
+        <router-link to="/products/103" class="nav__list-item-link"
           >Дозаторы</router-link
         >
       </li>
       <li class="nav__list-item">
-        <router-link to="/refund" class="nav__list-item-link"
+        <router-link to="/page/purchase-returns" class="nav__list-item-link"
           >Условия возврата</router-link
         >
       </li>
       <li class="nav__list-item">
-        <router-link to="/payment" class="nav__list-item-link"
+        <router-link to="/page/payment" class="nav__list-item-link"
           >Условия оплаты</router-link
         >
       </li>

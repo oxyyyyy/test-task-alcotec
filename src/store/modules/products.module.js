@@ -14,7 +14,7 @@ const state = {
 const mutations = {
   [SET_PRODUCTS](state, products) {
     state.products = products;
-    state.productsSortOrderAsc = false;
+    state.productsSortOrderAsc = "";
   },
 
   [TOGGLE_SORT_ORDER_OF_PRODUCTS](state) {

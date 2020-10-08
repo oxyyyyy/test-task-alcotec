@@ -11,28 +11,15 @@ const routes = [
     component: Home
   },
   {
-    path: "/vacuum",
-    name: "Vacuum",
+    path: "/products/:product_category_id",
+    name: "Products",
     component: () =>
-      import(/* webpackChunkName: "Vacuum" */ "../views/Vacuum.vue")
+      import(/* webpackChunkName: "Products" */ "../views/Products.vue")
   },
   {
-    path: "/dosators",
-    name: "Dosators",
-    component: () =>
-      import(/* webpackChunkName: "Dosators" */ "../views/Dosators.vue")
-  },
-  {
-    path: "/refund",
-    name: "Refund",
-    component: () =>
-      import(/* webpackChunkName: "Refund" */ "../views/Refund.vue")
-  },
-  {
-    path: "/payment",
-    name: "Payment",
-    component: () =>
-      import(/* webpackChunkName: "Payment" */ "../views/Payment.vue")
+    path: "/page/:page_id",
+    name: "Page",
+    component: () => import(/* webpackChunkName: "Page" */ "../views/Page.vue")
   },
   {
     path: "/404",
