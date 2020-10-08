@@ -32,7 +32,13 @@ export default {
     fetchProducts(productCategoryId) {
       this.$store
         .dispatch(FETCH_PRODUCTS, productCategoryId)
-        .then(products => (this.products = products))
+        .then(products => {
+          if (!products) {
+            this.$router.push("/404");
+            return;
+          }
+          this.products = products;
+        })
         .catch(error => {
           throw new Error(error);
         })
