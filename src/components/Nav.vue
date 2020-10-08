@@ -15,12 +15,12 @@
         >
       </li>
       <li class="nav__list-item">
-        <router-link to="/refund" class="nav__list-item-link"
+        <router-link to="/page/purchase-returns" class="nav__list-item-link"
           >Условия возврата</router-link
         >
       </li>
       <li class="nav__list-item">
-        <router-link to="/payment" class="nav__list-item-link"
+        <router-link to="/page/payment" class="nav__list-item-link"
           >Условия оплаты</router-link
         >
       </li>

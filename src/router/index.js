@@ -17,16 +17,9 @@ const routes = [
       import(/* webpackChunkName: "Products" */ "../views/Products.vue")
   },
   {
-    path: "/refund",
-    name: "Refund",
-    component: () =>
-      import(/* webpackChunkName: "Refund" */ "../views/Refund.vue")
-  },
-  {
-    path: "/payment",
-    name: "Payment",
-    component: () =>
-      import(/* webpackChunkName: "Payment" */ "../views/Payment.vue")
+    path: "/page/:page_id",
+    name: "Page",
+    component: () => import(/* webpackChunkName: "Page" */ "../views/Page.vue")
   },
   {
     path: "/404",
